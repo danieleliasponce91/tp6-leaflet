@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
+
+</head>
+<body>
+    <!-- Contenedor del Mapa -->
+    <div id="map" style="height: 500px;"></div>
+
+    <!-- Script -->
+    <script>
+        // Creamos la variable con el Mapa
+        var map = L.map('map').setView([-34.6037, -58.3816], 13);
+        // Agregar Mapa Real
+         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: '&copy; OpenStreetMap contributors'}).addTo(map);
+
+    </script>
+</body>
+</html>
