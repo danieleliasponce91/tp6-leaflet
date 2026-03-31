@@ -50,9 +50,44 @@
     var marker3 = L.marker([-37.3035212566859, -59.12439520395873]).addTo(map);
     marker3.bindPopup("Hola! RURA 226 😄");
 
+    // “Cuando el usuario hace click, capturamos la posición y la mostramos.”
+
     map.on('click', function(e) {
     alert("Lat: " + e.latlng.lat + " - Lng: " + e.latlng.lng);
     });
+
+
+    // Dibujamos un Circulo
+    L.circle([-37.297676932026796, -59.11818793025973], {
+    radius: 200,
+    color: 'blue'
+    }).addTo(map);
+
+    L.polygon([
+     [-37.2976, -59.1181],
+    [-37.2977, -59.1183],
+    [-37.2978, -59.1181],
+    [-37.2977, -59.1180]
+]).addTo(map);
+
+
+let puntos = [];
+let poligono;
+
+map.on('click', function(e) {
+    puntos.push([e.latlng.lat, e.latlng.lng]);
+
+    // Si ya hay un polígono, lo borro
+    if (poligono) {
+        map.removeLayer(poligono);
+    }
+
+    // Creo el nuevo polígono con los puntos
+    poligono = L.polygon(puntos, {
+        color: 'red'
+    }).addTo(map);
+});
+
 
     </script>
 
