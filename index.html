@@ -29,7 +29,7 @@
         //  Explicación: “Le decimos a Leaflet dónde dibujar el mapa”
 
         // 3. .setView(...)  Define la vista inicial del mapa
-    var map = L.map('map').setView([-34.6037, -58.3816], 13);
+    var map = L.map('map').setView([-37.32048, -59.1329], 13);
     // Agregar mapa real
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'}).addTo(map);
@@ -39,6 +39,9 @@
 //  .setView([lat, lon], zoom) define la ubicación inicial y el nivel de zoom.
 //  L.tileLayer(...) carga las imágenes del mapa desde OpenStreetMap usando coordenadas dinámicas.
 //  .addTo(map) agrega esa capa al mapa para que finalmente se vea en pantalla.
+
+// agregamos un Marcador al  Mapa
+    var marker = L.marker([-37.2977007,-59.12087]).addTo(map);
 
 
     </script>
