@@ -89,6 +89,28 @@ map.on('click', function(e) {
 });
 
 
+// agregamos varios mapas , es decir varias capas
+// Capa normal
+var mapaNormal = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap'
+});
+
+// Capa oscuro
+var mapaOscuro = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; CartoDB'
+});
+
+
+
+// Control para cambiar capas
+var capas = {
+    "Mapa Normal": mapaNormal,
+    "Mapa Oscuro": mapaOscuro
+};
+
+L.control.layers(capas).addTo(map);
+
+
     </script>
 
 
