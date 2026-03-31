@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Estas dos lineas sirven para usar la libreria Leaflet en el proyecto -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
@@ -13,15 +14,36 @@
 <body>
     <!-- Contenedor del Mapa -->
     <div id="map" style="height: 500px;"></div>
-
-    <!-- Script -->
+    <!-- crear el mapa -->
     <script>
-        // Creamos la variable con el Mapa
-        var map = L.map('map').setView([-34.6037, -58.3816], 13);
-        // Agregar Mapa Real
-         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-         attribution: '&copy; OpenStreetMap contributors'}).addTo(map);
+        // Esta línea crea un mapa usando Leaflet y lo posiciona.
+        //  PARTE POR PARTE
+        // var map, 
+        // Explicación: “Guardamos el mapa en una variable para poder usarlo después”
+
+        // 2. L.map('map')
+        // Crea el mapa
+        // L.map('map')
+        //  ¿Qué es L? : Es el objeto principal de Leaflet
+        //  ¿Qué significa 'map'? es el id del htmp, donde va el mapa
+        //  Explicación: “Le decimos a Leaflet dónde dibujar el mapa”
+
+        // 3. .setView(...)  Define la vista inicial del mapa
+    var map = L.map('map').setView([-34.6037, -58.3816], 13);
+    // Agregar mapa real
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'}).addTo(map);
+    
+//  Importamos Leaflet con <link> (estilos) y <script> (funcionalidad).
+//  L.map('map') crea el mapa dentro de un <div> con id map.
+//  .setView([lat, lon], zoom) define la ubicación inicial y el nivel de zoom.
+//  L.tileLayer(...) carga las imágenes del mapa desde OpenStreetMap usando coordenadas dinámicas.
+//  .addTo(map) agrega esa capa al mapa para que finalmente se vea en pantalla.
+
 
     </script>
+
+
+  
 </body>
 </html>
